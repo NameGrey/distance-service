@@ -1,10 +1,17 @@
-﻿namespace Distance.API;
+﻿using System.Reflection;
+using Distance.API.Swagger;
+
+namespace Distance.API;
 
 public class Startup
 {
+    private const string SwaggerVersion = "v2";
+    private const string SwaggerTitle = "Distance API";
+
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddControllers();
+        services.ConfigureSwagger(SwaggerVersion, SwaggerTitle, Assembly.GetExecutingAssembly().GetName().Name!);
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -27,5 +34,7 @@ public class Startup
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
         });
+
+        app.ConfigureSwagger(SwaggerVersion, SwaggerTitle);
     }
 }
