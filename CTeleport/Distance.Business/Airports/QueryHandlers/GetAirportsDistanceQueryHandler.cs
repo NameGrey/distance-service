@@ -1,12 +1,13 @@
 ﻿using Distance.Business.Airports.Queries;
 using Distance.Business.Common.Calculators;
+using Distance.Business.Common.Models;
+using Mapster;
 using MediatR;
 using Places.Client;
-using Places.Client.Models;
 
 namespace Distance.Business.Airports.QueryHandlers;
 
-public class GetAirportsDistanceQueryHandler : IRequestHandler<GetAirportsDistanceQuery, int>
+public class GetAirportsDistanceQueryHandler : IRequestHandler<GetAirportsDistanceQuery, double>
 {
     private readonly IPlacesServiceClient _placesServiceClient;
     private readonly IDistanceCalculator _distanceCalculator;
@@ -17,7 +18,7 @@ public class GetAirportsDistanceQueryHandler : IRequestHandler<GetAirportsDistan
         _distanceCalculator = distanceCalculator;
     }
 
-    public async Task<int> Handle(GetAirportsDistanceQuery request, CancellationToken cancellationToken)
+    public async Task<double> Handle(GetAirportsDistanceQuery request, CancellationToken cancellationToken)
     {
         var getFromAirportDetailsTask = _placesServiceClient.GetAirportDetails(request.FromAirportIata);
         var getToAirportDetailsTask = _placesServiceClient.GetAirportDetails(request.ToAirportIata);
@@ -27,6 +28,6 @@ public class GetAirportsDistanceQueryHandler : IRequestHandler<GetAirportsDistan
         var fromAirportDetails = getFromAirportDetailsTask.Result;
         var toAirportDetails = getToAirportDetailsTask.Result;
 
-        return 0;
+        return _distanceCalculator.Calculate(fromAirportDetails.Adapt<LocationCoordinate>(), toAirportDetails.Adapt<LocationCoordinate>());
     }
 }

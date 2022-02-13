@@ -24,7 +24,7 @@ namespace Distance.API.Controllers
         /// <param name="to">Airport's IATA code to which to find a distance</param>
         /// <returns>Distance in miles between 2 airports</returns>
         [HttpGet("{from}/distance/{to}")]
-        public Task<int> GetDistance(string from, string to)
+        public Task<double> GetDistance(string from, string to)
         {
             return _mediator.Send(new GetAirportsDistanceQuery(from, to));
         }

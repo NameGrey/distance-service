@@ -10,5 +10,7 @@ public static class Bootstrapper
     {
         services.AddTransient<IDistanceCalculator, DistanceCalculator>();
         services.AddMediatR(typeof(Bootstrapper));
+
+        Common.Maps.Bootstrapper.InitializeMaps();
     }
 }

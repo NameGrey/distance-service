@@ -2,4 +2,4 @@
 
 namespace Distance.Business.Airports.Queries;
 
-public record GetAirportsDistanceQuery(string FromAirportIata, string ToAirportIata) : IRequest<int>;
+public record GetAirportsDistanceQuery(string FromAirportIata, string ToAirportIata) : IRequest<double>;
