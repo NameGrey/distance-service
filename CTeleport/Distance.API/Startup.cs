@@ -1,6 +1,7 @@
 ﻿using Distance.API.Configuration;
 using Distance.API.Swagger;
 using System.Reflection;
+using Distance.API.Extensions;
 using Distance.Business;
 
 namespace Distance.API;

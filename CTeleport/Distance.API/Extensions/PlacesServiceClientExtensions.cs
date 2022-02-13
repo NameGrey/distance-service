@@ -1,6 +1,7 @@
-﻿using Places.Client;
+﻿using Distance.API.Configuration;
+using Places.Client;
 
-namespace Distance.API.Configuration
+namespace Distance.API.Extensions
 {
     public static class PlacesServiceClientExtensions
     {

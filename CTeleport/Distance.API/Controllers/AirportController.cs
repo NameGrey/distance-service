@@ -18,7 +18,7 @@ namespace Distance.API.Controllers
         }
 
         /// <summary>
-        /// Gets distance between 2 airports
+        /// Get distance between 2 airports
         /// </summary>
         /// <param name="from">Airport's IATA code from which to find a distance</param>
         /// <param name="to">Airport's IATA code to which to find a distance</param>

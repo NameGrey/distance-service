@@ -1,4 +1,4 @@
-﻿namespace Distance.Business.Extensions;
+﻿namespace Distance.Business.Common.Extensions;
 
 public static class MathExtensions
 {
