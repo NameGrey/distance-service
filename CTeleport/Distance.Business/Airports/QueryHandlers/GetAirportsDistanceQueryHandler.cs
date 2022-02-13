@@ -1,13 +1,29 @@
 ﻿using Distance.Business.Airports.Queries;
 using MediatR;
+using Places.Client;
+using Places.Client.Models;
 
 namespace Distance.Business.Airports.QueryHandlers;
 
 public class GetAirportsDistanceQueryHandler : IRequestHandler<GetAirportsDistanceQuery, int>
 {
-    public Task<int> Handle(GetAirportsDistanceQuery request, CancellationToken cancellationToken)
+    private readonly IPlacesServiceClient _placesServiceClient;
+
+    public GetAirportsDistanceQueryHandler(IPlacesServiceClient placesServiceClient)
     {
-        // todo: Implement business logic
-        return Task.FromResult(0);
+        _placesServiceClient = placesServiceClient;
+    }
+
+    public async Task<int> Handle(GetAirportsDistanceQuery request, CancellationToken cancellationToken)
+    {
+        var getFromAirportDetailsTask = _placesServiceClient.GetAirportDetails(request.FromAirportIata);
+        var getToAirportDetailsTask = _placesServiceClient.GetAirportDetails(request.ToAirportIata);
+
+        await Task.WhenAll(getFromAirportDetailsTask, getToAirportDetailsTask);
+
+        var fromAirportDetails = getFromAirportDetailsTask.Result;
+        var toAirportDetails = getToAirportDetailsTask.Result;
+
+        return 0;
     }
 }
