@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Distance.Business.Airports.Queries;
+using MediatR;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Distance.API.Controllers
 {
@@ -8,6 +10,13 @@ namespace Distance.API.Controllers
     [Route("airports")]
     public class AirportController: ControllerBase
     {
+        private readonly IMediator _mediator;
+
+        public AirportController(IMediator mediator)
+        {
+            _mediator = mediator;
+        }
+
         /// <summary>
         /// Gets distance between 2 airports
         /// </summary>
@@ -17,7 +26,7 @@ namespace Distance.API.Controllers
         [HttpGet("{from}/distance/{to}")]
         public Task<int> GetDistance(string from, string to)
         {
-            return Task.FromResult(0);
+            return _mediator.Send(new GetAirportsDistanceQuery(from, to));
         }
     }
 }

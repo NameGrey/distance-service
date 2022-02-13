@@ -23,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Distance.Business\Distance.Business.csproj" />
     <ProjectReference Include="..\Places.Client\Places.Client.csproj" />
   </ItemGroup>
 

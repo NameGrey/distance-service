@@ -1,6 +1,7 @@
 ﻿using Distance.API.Configuration;
 using Distance.API.Swagger;
 using System.Reflection;
+using Distance.Business;
 
 namespace Distance.API;
 
@@ -22,6 +23,7 @@ public class Startup
         services.ConfigureSwagger(SwaggerVersion, SwaggerTitle, Assembly.GetExecutingAssembly().GetName().Name!);
         services.ConfigurePlacesClientService(_configuration);
 
+        services.BootstrapBusiness();
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
