@@ -33,7 +33,8 @@ The current repo is a testing task. Please read the info about the launch and pr
 # Next steps
 The service can fully function in the current condition, but there can be made other improvements:
 1. Add Logging
-2. Use distributed cache
-3. Add Polly Caching Policy with Distributed cache
-4. Use kubernetes in order to improve resilience of the service
-5. Use NSwag in order to generate Services Clients code using Open API documentation
+2. Add exceptions handling and return more specific codes in case of errors (now everything is 500)
+3. Use distributed cache
+4. Add Polly Caching Policy with Distributed cache
+5. Use kubernetes in order to improve resilience of the service
+6. Use NSwag in order to generate Services Clients code using Open API documentation
