@@ -21,13 +21,6 @@ public class PlacesServiceClient: IPlacesServiceClient
         var responseBody = await response.Content.ReadAsStringAsync();
         var result = JsonSerializer.Deserialize<AirportDetails>(responseBody, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
 
-        if (result == null)
-        {
-            // Result can be null when service's API has changed, but one service was deployed earlier than another
-            // This exception will allow us to use Retry policy
-            throw new HttpRequestException("Incorrect response from Places service. Please check if API has changed");
-        }
-
         return result;
     }
 }
