@@ -1,5 +1,4 @@
 ﻿using Distance.API.Extensions;
-using Distance.API.Swagger;
 using Distance.Business;
 using System.Reflection;
 
