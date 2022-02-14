@@ -1,6 +1,7 @@
 ﻿using Distance.API.Extensions;
 using Distance.Business;
 using System.Reflection;
+using AspNetCoreRateLimit;
 
 namespace Distance.API;
 
@@ -20,6 +21,7 @@ public class Startup
     {
         services.AddControllers();
         services.ConfigureSwagger(SwaggerVersion, SwaggerTitle, Assembly.GetExecutingAssembly().GetName().Name!);
+        services.ConfigureRateLimitMiddleware(_configuration);
         services.ConfigurePlacesClientService(_configuration);
 
         services.BootstrapBusiness();
@@ -38,6 +40,7 @@ public class Startup
         }
 
         app.UseRouting();
+        app.UseIpRateLimiting();
 
         app.UseEndpoints(endpoints =>
         {
