@@ -1,6 +1,6 @@
 ﻿using Microsoft.OpenApi.Models;
 
-namespace Distance.API.Swagger;
+namespace Distance.API.Extensions;
 
 public static class SwaggerExtensions
 {
