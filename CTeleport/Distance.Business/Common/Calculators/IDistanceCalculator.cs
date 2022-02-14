@@ -1,4 +1,4 @@
-﻿using Distance.Business.Common.Models;
+﻿using Distance.Domain.Models;
 
 namespace Distance.Business.Common.Calculators;
 

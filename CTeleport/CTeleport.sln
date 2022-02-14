@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Places.Client", "Places.Cli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Distance.Business", "Distance.Business\Distance.Business.csproj", "{3100975E-1A9A-4BAB-8C7D-149903A84265}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Distance.Domain", "Distance.Domain\Distance.Domain.csproj", "{086F1504-B3DB-43C2-B3F0-4E1BCB5E339E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{3100975E-1A9A-4BAB-8C7D-149903A84265}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3100975E-1A9A-4BAB-8C7D-149903A84265}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3100975E-1A9A-4BAB-8C7D-149903A84265}.Release|Any CPU.Build.0 = Release|Any CPU
+		{086F1504-B3DB-43C2-B3F0-4E1BCB5E339E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{086F1504-B3DB-43C2-B3F0-4E1BCB5E339E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{086F1504-B3DB-43C2-B3F0-4E1BCB5E339E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{086F1504-B3DB-43C2-B3F0-4E1BCB5E339E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +52,7 @@ Global
 		{62483B68-D6F1-474E-9059-F3B4B02FF9FD} = {822AD9C6-F454-409A-9689-3D7144EC41DB}
 		{C29138E7-BC3A-4061-846D-CCB3B209FD8B} = {62483B68-D6F1-474E-9059-F3B4B02FF9FD}
 		{3100975E-1A9A-4BAB-8C7D-149903A84265} = {70269186-8CC0-4B3F-847F-8BF4EAF07EFC}
+		{086F1504-B3DB-43C2-B3F0-4E1BCB5E339E} = {70269186-8CC0-4B3F-847F-8BF4EAF07EFC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {100F64F2-F1A0-4362-9072-B79C1A5C3A54}

@@ -1,6 +1,6 @@
 ﻿using Distance.Business.Airports.Queries;
 using Distance.Business.Common.Calculators;
-using Distance.Business.Common.Models;
+using Distance.Domain.Models;
 using Mapster;
 using MediatR;
 using Places.Client;

@@ -1,4 +1,4 @@
-﻿using Distance.Business.Common.Models;
+﻿using Distance.Domain.Models;
 using Mapster;
 using Places.Client.Models;
 
