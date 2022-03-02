@@ -1,5 +1,19 @@
 # Intro
-The current repo is a testing task. Please read the info about the launch and project structure below.
+The current repo is a testing task. Please read the info about the launch and project structure below. 
+
+## !ATTENTION
+This project is just PoC and there should be made other improvements in real project which depend a lot on the context.
+
+The task description is the following:
+
+<i>Build a REST service to measure distance in miles between two airports. Airports are identified by 3-letter IATA code.
+
+Sample call to get airport details:
+GET https://places-dev.company.com/airports/AMS HTTP/1.1
+
+It's allowed to use any 3-rd party components/frameworks.
+Solution has to be based on dotnet core 5+
+</i>
 
 # Launch
 ## Prerequisites:
@@ -33,7 +47,9 @@ The current repo is a testing task. Please read the info about the launch and pr
 # Next steps
 The service can fully function in the current condition, but there can be made other improvements:
 1. Add Logging
-2. Use distributed cache
-3. Add Polly Caching Policy with Distributed cache
-4. Use kubernetes in order to improve resilience of the service
-5. Use NSwag in order to generate Services Clients code using Open API documentation
+2. Add exceptions handling and return more specific codes in case of errors (now everything is 500)
+3. Improve Polly policies for retries
+4. Use distributed cache
+5. Add Polly Caching Policy with Distributed cache
+6. Use kubernetes in order to improve resilience of the service
+7. Use NSwag in order to generate Services Clients code using Open API documentation7. 
