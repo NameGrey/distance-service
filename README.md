@@ -24,7 +24,7 @@ Solution has to be based on dotnet core 5+
 ## Launch from Visual Studio
 1. Be sure you have C# 10 supported
 2. Be sure you have Docker tools for Visual Studio
-3. Open CTeleport solution
+3. Open SomeCompany solution
 4. Choose "Docker" configuration to start the application
 
 # Project structure
